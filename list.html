@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="createb" action="http://localhost:3001/insert" method="post">
+        <label>
+            User Name:<br>
+            <input type="text" id="userName" required="True" name="userName"><br>
+        </label>
+        <label>
+            Phone nO:<br>
+            <input type="tel" id="PhoneNo" name="PhoneNo" required="True"><br>
+        </label>
+        <label>
+            Email ID:<br>
+            <input type="email" id="emailId" required="True" name="emailId"><br>
+        </label>
+        <button type="submit" name="submit" value="submit">Submit</button>
+    </form>
+
+    <form id="deleteform" action="http://localhost:3001/delete" method="post">
+        <label>
+            User Name:<br>
+            <input type="text" id="userName" required="True" name="userName"><br>
+        </label>
+        <button type="submit" name="delete" value="delete">Submit</button>
+    </form>
+
+    <form id="updateform" action="http://localhost:3001/update" method="post">
+        <label>
+            User Name:<br>
+            <input type="text" id="userName" required="True" name="userName"><br>
+        </label>
+        <label>
+            updated email:<br>
+            <input type="email" id="emailId" required="True" name="emailId"><br>
+        </label>
+        <button type="submit" name="update" value="update">Submit</button>
+    </form>
+    <form id="searchform" action="http://localhost:3001/search" method="post">
+        <label>
+            User Name:<br>s
+            <input type="text" id="userName" required="True" name="userName"><br>
+        </label>
+        
+        <button type="submit" name="search" value="search">Submit</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<div class="head">
+    <header>
+        <h1>Login</h1>
+    </header>
+</div>
+<div class="forms">
+<form>
+
+    <div class="name">
+        <label>
+            Name:<br/>
+            <input type="text" name="fname" #fname="ngModel" required pattern="^[a-zA-Z]+$"[(ngModel)]="fname1"   />
+            <div classname="errormsg" *ngIf="fname.invalid && (fname.dirty)||(fname.touched)">
+                <div *ngIf="fname.hasError('required')">Name is required</div>
+                <div *ngIf="fname.hasError('pattern')">Name must contain only alphabets</div>
+            </div>
+        </label>
+    </div>
+    <div class="name">
+        <label>
+            Last Name:<br/>
+            <input type="text" name="lname" #lname="ngModel" required pattern="^[a-zA-Z]+$"[(ngModel)]="lname1"   />
+            <div classname="errormsg" *ngIf="lname.invalid && (lname.dirty)||(lname.touched)">
+                <div *ngIf="lname.hasError('required')">Last Name is required</div>
+                <div *ngIf="lname.hasError('pattern')">Last Name must contain only alphabets</div>
+            </div>
+        </label>
+    </div>
+    <div class="name">
+        <label>
+            Phone No:<br/>
+            <input type="number" name="Phone" #Phone="ngModel" required pattern="^\d{10}$"[(ngModel)]="Phone1"   />
+            <div classname="errormsg" *ngIf="Phone.invalid && (Phone.dirty)||(Phone.touched)">
+                <div *ngIf="Phone.hasError('required')">Number is required</div>
+                <div *ngIf="Phone.hasError('pattern')">Number must contain only 10 digits</div>
+            </div>
+        </label>
+    </div>
+    <div class="name">
+        <label>
+           Email:<br/>
+            <input type="email" name="mail" #mail="ngModel" required pattern="^[\w.%+\-]+@[\w.\-]+\.[A-Za-z]{2,3}$"[(ngModel)]="mail1"   />
+            <div classname="errormsg" *ngIf="mail.invalid && (mail.dirty)||(mail.touched)">
+                <div *ngIf="mail.hasError('required')">MAIL is required</div>
+                <div *ngIf="mail.hasError('pattern')">mail has no proper format</div>
+            </div>
+        </label>
+    </div>
+    <br/>
+    <div class="sub">
+        <button type="submit"(click)="validate()"routerLink="/home" >Submit</button>
+    </div>
+</form>
+</div>
+<h1>{{display}}</h1>

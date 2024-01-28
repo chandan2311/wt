@@ -1,0 +1,71 @@
+
+
+<app-topbar></app-topbar>
+<!-- login.component.html -->
+
+<div class="main">
+<div class="block">
+  
+  <div class="h1a"><h1>LOGIN</h1></div>
+<form >
+  <!-- USN Input -->
+  <div class="usn">
+    <label class="usntext">
+      USN:<br>
+      <input
+        #usn="ngModel"
+        required
+        pattern="^\d{2}[a-zA-Z]{2}\d{2}[a-zA-Z]{3}\d{3}$"
+        name="usn"
+        [(ngModel)]="usn1"
+      />
+      
+      <div class="errormsg" *ngIf="usn.invalid && (usn.dirty || usn.touched)">
+        <div *ngIf="usn.hasError('required')">USN is required.</div>
+        <div *ngIf="usn.hasError('pattern')">USN should be 10 characters alphanumeric special ID.</div>
+      </div>
+    </label>
+  </div>
+
+  <!-- Password Input -->
+  <div>
+    <label class="passwordtext">
+      Password:<br>
+      <input class="usn"
+        #password="ngModel"
+        required
+        minlength="6"
+        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+={}\[\]:;<>,.?~\\-]).{6,}"
+        type="password"
+        name="password"
+        [(ngModel)]="password1"
+      />
+      <div class="errormsg2" *ngIf="password.invalid && (password.dirty || password.touched)">
+        <div *ngIf="password.hasError('required')">Password is required.</div>
+        <div *ngIf="password.hasError('minlength')">Password must be at least 6 characters long.</div>
+        <div *ngIf="password.hasError('pattern')">
+          Password must contain at least one digit, one lowercase letter, one uppercase letter, and one special character.
+        </div>
+      </div>
+    </label>
+  </div>
+
+  <!-- Remember Me Checkbox -->
+  <div class="movebx">
+    <label >
+      <input class="checkboxtext" type="checkbox" name="rememberMe" [(ngModel)]="rememberMe" /> Remember Me
+    </label>
+  </div>
+
+  <!-- Submit Button -->
+  <div class="btn">
+    <button type="submit" (click)="login()" >LOGIN</button>
+    <button (click)="redirectToOtherApp()">Admin Page</button>
+  </div>
+</form>
+
+</div>
+<div class="img">
+  <img src="assets\image\img.jpg" alt="jbl" >
+</div>
+</div>
